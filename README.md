@@ -1,2 +1,2 @@
-# ece4534-rover-final
-Final code for the rover in ECE 4534.
+# ece4534-simple-code-repo
+Team 18's solution for the Simple Code Example

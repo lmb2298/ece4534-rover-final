@@ -1,0 +1,126 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --board "/ti/boards/CC3220SF_LAUNCHXL" --product "simplelink_cc32xx_sdk@4.40.00.07"
+ * @versions {"data":"2021010520","timestamp":"2021010520","tool":"1.7.0+1746","templates":null}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const GPIO           = scripting.addModule("/ti/drivers/GPIO");
+const GPIO1          = GPIO.addInstance();
+const GPIO2          = GPIO.addInstance();
+const GPIO3          = GPIO.addInstance();
+const GPIO4          = GPIO.addInstance();
+const GPIO5          = GPIO.addInstance();
+const GPIO6          = GPIO.addInstance();
+const GPIO7          = GPIO.addInstance();
+const GPIO8          = GPIO.addInstance();
+const GPIO9          = GPIO.addInstance();
+const GPIO10         = GPIO.addInstance();
+const GPIO11         = GPIO.addInstance();
+const RTOS           = scripting.addModule("/ti/drivers/RTOS");
+const SPI            = scripting.addModule("/ti/drivers/SPI");
+const SPI1           = SPI.addInstance();
+const Timer          = scripting.addModule("/ti/drivers/Timer");
+const Timer1         = Timer.addInstance();
+const Timer2         = Timer.addInstance();
+const UART           = scripting.addModule("/ti/drivers/UART", {}, false);
+const UART1          = UART.addInstance();
+const UART2          = scripting.addModule("/ti/drivers/UART2", {}, false);
+const UART21         = UART2.addInstance();
+const SimpleLinkWifi = scripting.addModule("/ti/drivers/net/wifi/SimpleLinkWifi");
+const HTTPClient     = scripting.addModule("/ti/net/HTTPClient", {}, false);
+const HTTPClient1    = HTTPClient.addInstance();
+const MQTT           = scripting.addModule("/ti/net/MQTT", {}, false);
+const MQTT1          = MQTT.addInstance();
+const SlNet          = scripting.addModule("/ti/net/SlNet", {}, false);
+const SlNet1         = SlNet.addInstance();
+const JSON           = scripting.addModule("/ti/utils/JSON");
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+GPIO1.$hardware = system.deviceData.board.components.LED_RED;
+GPIO1.$name     = "CONFIG_GPIO_LED_0";
+
+GPIO2.$name     = "CONFIG_GPIO_LED_1";
+GPIO2.$hardware = system.deviceData.board.components.LED_YELLOW;
+
+GPIO3.$name     = "CONFIG_GPIO_LED_2";
+GPIO3.$hardware = system.deviceData.board.components.LED_GREEN;
+
+GPIO4.$name = "CONFIG_GPIO_0";
+
+GPIO5.$name = "CONFIG_GPIO_1";
+
+GPIO6.$name = "CONFIG_GPIO_2";
+
+GPIO7.$name = "CONFIG_GPIO_3";
+
+GPIO8.$name = "CONFIG_GPIO_4";
+
+GPIO9.$name = "CONFIG_GPIO_5";
+
+GPIO10.$name           = "CONFIG_GPIO_6";
+GPIO10.gpioPin.$assign = "boosterpack.28";
+
+GPIO11.$name           = "CONFIG_GPIO_7";
+GPIO11.gpioPin.$assign = "boosterpack.30";
+
+const Power          = scripting.addModule("/ti/drivers/Power", {}, false);
+Power.parkPins.$name = "ti_drivers_power_PowerCC32XXPins0";
+
+RTOS.name = "FreeRTOS";
+
+SPI1.$name = "CONFIG_SPI_0";
+
+Timer1.timerType     = "32 Bits";
+Timer1.$name         = "CONFIG_TIMER_0";
+Timer1.timer.$assign = "Timer0";
+
+Timer2.$name     = "CONFIG_TIMER_1";
+Timer2.timerType = "32 Bits";
+
+UART1.$name              = "CONFIG_UART_0";
+UART1.uart.txPin.$assign = "boosterpack.4";
+
+UART21.$name     = "CONFIG_UART2_0";
+UART21.$hardware = system.deviceData.board.components.XDS110UART;
+
+HTTPClient1.$name = "CONFIG_HTTPCLIENT_0";
+
+MQTT1.$name = "CONFIG_MQTT_0";
+
+SlNet1.ifName = "CC32xx";
+SlNet1.$name  = "CONFIG_SLNET";
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+GPIO1.gpioPin.$suggestSolution            = "boosterpack.29";
+GPIO2.gpioPin.$suggestSolution            = "boosterpack.9";
+GPIO3.gpioPin.$suggestSolution            = "boosterpack.10";
+GPIO4.gpioPin.$suggestSolution            = "boosterpack.18";
+GPIO5.gpioPin.$suggestSolution            = "boosterpack.19";
+GPIO6.gpioPin.$suggestSolution            = "boosterpack.13";
+GPIO7.gpioPin.$suggestSolution            = "boosterpack.5";
+GPIO8.gpioPin.$suggestSolution            = "boosterpack.8";
+GPIO9.gpioPin.$suggestSolution            = "boosterpack.27";
+SPI1.spi.$suggestSolution                 = "SPI0";
+SPI1.spi.sclkPin.$suggestSolution         = "boosterpack.7";
+SPI1.spi.misoPin.$suggestSolution         = "boosterpack.14";
+SPI1.spi.mosiPin.$suggestSolution         = "boosterpack.15";
+SPI1.spi.dmaRxChannel.$suggestSolution    = "UDMA_CH30";
+SPI1.spi.dmaTxChannel.$suggestSolution    = "UDMA_CH31";
+Timer2.timer.$suggestSolution             = "Timer1";
+UART1.uart.$suggestSolution               = "UART0";
+UART1.uart.rxPin.$suggestSolution         = "boosterpack.17";
+UART21.uart.$suggestSolution              = "UART1";
+UART21.uart.txPin.$suggestSolution        = "55";
+UART21.uart.txDmaChannel.$suggestSolution = "UDMA_CH11";
+UART21.uart.rxPin.$suggestSolution        = "57";
+UART21.uart.rxDmaChannel.$suggestSolution = "UDMA_CH10";
