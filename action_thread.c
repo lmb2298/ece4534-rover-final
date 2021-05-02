@@ -75,14 +75,15 @@ BaseType_t determineAction()
 		
 		case MOVING:
 			if (received.topic == PID) {
-				rover.speed = rover.speed - received.pidData;
+				/*rover.speed = rover.speed - received.pidData;
 				if (rover.speed <= 30) {
 					target.distance = 0;
 					rover.speed = 0;
 					rover.state = IDLE;
-				}
+				}*/
 			}
 			else if (received.topic == SENSORS && received.sensorData.collision == 1) {
+				target.distance = 0;
 				rover.speed = 0;
 				rover.state = IDLE;
 			}

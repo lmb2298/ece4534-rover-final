@@ -14,9 +14,12 @@
 #include <debug.h>
 
 typedef struct PID_Message {
-	uint8_t encoder1;
-	uint8_t encoder2;
-	uint8_t encoder3;
+	int encoder1;
+	int encoder2;
+	int encoder3;
+	int e1;
+	int e2;
+	int e3;
 } PID_Message_t;
 
 /**

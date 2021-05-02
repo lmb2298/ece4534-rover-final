@@ -61,8 +61,8 @@ bool encodeMessage()
 		break;
 	case ENCODE_TOPIC_PID:
 		outbound.topic = "rover/pid";
-		snprintf(outbound.payload, sizeof(outbound.payload), "{\"encoder1\":%d, \"encoder2\":%d, \"encoder3\":%d}", 
-				 received.pidMsg.encoder1, received.pidMsg.encoder2, received.pidMsg.encoder3);
+		snprintf(outbound.payload, sizeof(outbound.payload), "{\"encoder1\":%d, %d, \"encoder2\":%d, %d \"encoder3\":%d, %d", 
+				 received.pidMsg.encoder1, received.pidMsg.e1, received.pidMsg.encoder2, received.pidMsg.e2, received.pidMsg.encoder3, received.pidMsg.e3);
 		break;
 	case ENCODE_TOPIC_ACTION:
 		outbound.topic = "rover/action";

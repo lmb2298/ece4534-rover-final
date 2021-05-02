@@ -8,6 +8,7 @@ void gpioWrite(unsigned int outputLoc);
 
 void Debug_init()
 {
+	/*
 	// initialize GPIO pins for debugging
 	GPIO_setConfig(CONFIG_GPIO_0, GPIO_CFG_OUT_STD | GPIO_CFG_OUT_LOW);
     GPIO_setConfig(CONFIG_GPIO_1, GPIO_CFG_OUT_STD | GPIO_CFG_OUT_LOW);
@@ -25,11 +26,13 @@ void Debug_init()
     GPIO_write(CONFIG_GPIO_LED_0, CONFIG_GPIO_LED_OFF); // it defaults to OFF
 	GPIO_write(CONFIG_GPIO_LED_1, CONFIG_GPIO_LED_OFF); // it defaults to OFF
 	GPIO_write(CONFIG_GPIO_LED_2, CONFIG_GPIO_LED_OFF); // it defaults to OFF
+	*/
 }
 
 void dbgEvent(unsigned int outputLoc)
 {
-    if (outputLoc > 127) {
+    /*
+	if (outputLoc > 127) {
         // We don't use the outputLoc here b/c 1) it won't fit onto the GPIO lines and 2)
         // dbgStopAll calls this function, which would lead to infinite recursion. Also,
         // this way we're notified that we have an out-of-range code.
@@ -50,6 +53,7 @@ void dbgEvent(unsigned int outputLoc)
 
     // notify that we've finished the modifications
     GPIO_write(CONFIG_GPIO_7, 0);
+	*/
 }
 
 void dbgStopAll(unsigned int stopVal)
